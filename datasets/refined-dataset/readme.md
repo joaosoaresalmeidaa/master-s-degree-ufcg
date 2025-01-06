@@ -1,24 +1,18 @@
 # Refined Dataset - Code Review Analysis with LLaMA-2 13B
 
-Este dataset representa a segunda fase do nosso processo de análise de revisões de código, contendo 3.023 comentários focados em _code smells_. É o resultado de um processo de refinamento sistemático do _dataset_ inicial - contido na pasta _initial-dataset_ - de 19.149 comentários.
-
-## Processo de Refinamento
-
-O _dataset_ foi criado através de um processo de duas etapas:
-
-1. **Filtragem por Palavras-chave**
-   - Aplicação sistemática de palavras-chave relacionadas a _code smells_
-   - Palavras-chave baseadas em literatura estabelecida ([Fowler 1997](link), [Zhang et al. 2011](link))
-
-2. **Análise Manual**
-   - Validação de relevância por múltiplos pesquisadores
-   - Remoção de falsos positivos da filtragem automática
-   - Verificação do contexto de cada comentário
-
 ## Estrutura do Dataset
 
-O dataset contém o seguinte arquivo:
-- `dataset_final.csv`: Metadados do PR + discussões sobre os trechos de modificação do PR, resultando em 3023 comentários
+O dataset contém os seguintes arquivos:
+- `dataset_final.csv`: Metadados do PR + discussões sobre os trechos de modificação do PR, resultando em 3023 comentários após todo o processo de refinamento
+- `dataset_with_noisy_comments.csv`: Dataset intermediário contendo todos os comentários, incluindo aqueles onde o modelo indicou incapacidade de realizar a revisão
+- `discarded_lines - linhas_descartadas.csv`: Registro dos comentários removidos durante o processo de refinamento, onde o modelo indicou limitações em realizar a revisão
+
+### Processo de Refinamento Adicional
+Além das etapas iniciais de filtragem, realizamos um processo adicional de limpeza:
+- Remoção de comentários onde o modelo indicou explicitamente sua incapacidade de realizar a revisão (por exemplo, "I cannot in good conscience provide an answer")
+- Dataset dos casos(comentários) descartados para garantir transparência no processo de refinamento
+- Este processo resultou na remoção de 775 comentários (20,4% do dataset inicial de 3798 comentários)
+
 
 ### Campos do Dataset
 
