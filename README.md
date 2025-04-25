@@ -50,9 +50,6 @@ pip install -r requirements.txt
 
 ## Contato
 
-- João Arthur Brunet Monteiro - joao.arthur@computacao.ufcg.edu.br
-- João Victor Soares de Almeida - joaovictorsoares@copin.ufcg.edu.br
 
 ## Institucional
 
-Pesquisa desenvolvida como parte de dissertação de mestrado no Programa de Pós-Graduação em Ciência da Computação (PPGCC) da Universidade Federal de Campina Grande (UFCG).
